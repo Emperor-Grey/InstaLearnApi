@@ -1,4 +1,3 @@
-// paymentController.js
 const stripe = require('stripe')('your_stripe_secret_key');
 
 const processPayment = async (req, res) => {

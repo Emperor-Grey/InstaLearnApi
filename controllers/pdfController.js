@@ -1,7 +1,4 @@
-const admin = require('firebase-admin');
-
-const db = admin.firestore();
-const bucket = admin.storage().bucket();
+const {db, bucket} = require('../config/firebaseConfig')
 
 const uploadPDF = async (req, res) => {
     try {
@@ -26,15 +23,12 @@ const uploadPDF = async (req, res) => {
         });
 
         fileStream.on('finish', async () => {
-            await fileUpload.makePublic(); // Make the uploaded file publicly accessible
+            await fileUpload.makePublic();
             const fileUrl = `https://storage.googleapis.com/${bucket.name}/${fileUpload.name}`
 
             // Save metadata to Firestore
             await db.collection('pdfs').add({
-                title,
-                description,
-                uploaderName,
-                fileUrl,
+                title, description, uploaderName, fileUrl,
             });
 
             res.status(200).send({message: 'File uploaded successfully', fileUrl});
