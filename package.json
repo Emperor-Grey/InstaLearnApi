@@ -1,0 +1,19 @@
+{
+  "name": "instalearnapi",
+  "version": "1.0.0",
+  "description": "InstaLearn API is a simple API designed for the InstaLearn project, catering to college students by offering a platform to sell and purchase PDF study materials. It includes features such as PDF upload, user authentication, payment processing, and PDF retrieval. Built using Express.js, Firebase Admin SDK, Multer for file uploads, Stripe for payment integration, and CORS for cross-origin resource sharing.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "King Grey",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0",
+    "multer": "^1.4.5-lts.1",
+    "stripe": "^15.6.0"
+  }
+}
